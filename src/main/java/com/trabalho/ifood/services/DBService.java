@@ -33,6 +33,9 @@ public class DBService {
     @Autowired
     private GrupoProdutoRepository GrupoProdutoRepository;
 
+    @Autowired
+    private VeiculoRepository veiculoRepository;
+
     public void initDB() {
         Entregador Entregador01 = new Entregador(null, "Cadmiel", "Rua Severino Pai", "17994786539", "98778976587");
         Cliente Cliente01 = new Cliente(null, "Mateus", "Rua Amildo Filho", "17992868282", "12332112365");
@@ -83,5 +86,19 @@ public class DBService {
         PedidoRepository.save(Pedido01);
         PedidoRepository.save(Pedido02);
         PedidoRepository.save(Pedido03);
+
+        Veiculo veiculo1 = new Veiculo(null,"carro vermelho", LocalDate.now(),10.00, "Victor", "34357890821");
+
+        Veiculo veiculo2 = new Veiculo(null,"carro bmw", LocalDate.now(),20.00, "Gabriel", "123456");
+        Veiculo veiculo3 = new Veiculo(null,"carro mercedes", LocalDate.now(),60.00, "João", "326598");
+        Veiculo veiculo4 = new Veiculo(null,"carro amarelo", LocalDate.now(),80.00, "David", "177777");
+
+        veiculoRepository.save(veiculo1);
+        veiculoRepository.save(veiculo2);
+        veiculoRepository.save(veiculo3);
+        veiculoRepository.save(veiculo4);
+
+
+
     }
 }
