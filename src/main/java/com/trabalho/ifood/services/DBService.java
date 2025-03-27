@@ -91,7 +91,7 @@ public class DBService {
 
         Veiculo veiculo2 = new Veiculo(null,"carro bmw", LocalDate.now(),20.00, "Gabriel", "123456");
         Veiculo veiculo3 = new Veiculo(null,"carro mercedes", LocalDate.now(),60.00, "João", "326598");
-        Veiculo veiculo4 = new Veiculo(null,"carro amarelo", LocalDate.now(),80.00, "David", "177777");
+        Veiculo veiculo4 = new Veiculo(null,"camaro amarelo", LocalDate.now(),80.00, "David", "177777");
 
         veiculoRepository.save(veiculo1);
         veiculoRepository.save(veiculo2);
