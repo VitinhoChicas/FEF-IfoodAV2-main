@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 @Entity
 @Table(name = "cliente")
 public class Cliente extends Pessoa{
+
     @JsonIgnore
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();

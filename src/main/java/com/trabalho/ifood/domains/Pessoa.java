@@ -13,10 +13,11 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name="pessoa")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_pessoa")
+    @SequenceGenerator(name = "seq_pessoa", sequenceName = "seq_pessoa" , allocationSize = 1)
     protected Long idPessoa;
 
     @NotNull
@@ -38,7 +39,8 @@ public abstract class Pessoa {
     protected LocalDate createdAt;
 
 @ElementCollection(fetch = FetchType.EAGER)
-@CollectionTable(name = "pessoas")
+@CollectionTable(name = "pessoas" , joinColumns = @JoinColumn (name = "pessoa_id"))
+@Column(name = "person_type")
 protected Set<Integer> tipoPessoa = new HashSet<>();
 
 
